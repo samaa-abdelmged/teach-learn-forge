@@ -68,7 +68,7 @@ const resources = {
       
       // Common
       "common.premium": "PREMIUM",
-      "common.search": "Search for courses...",
+      "common.search": "Search about teachers...",
       "common.searchStudents": "Search for students...",
       "common.notifications": "Notifications",
       "common.rating": "Rating",
@@ -140,7 +140,7 @@ const resources = {
       
       // Common
       "common.premium": "بريميوم",
-      "common.search": "ابحث عن الدورات...",
+      "common.search": "ابحث عن المعلمين...",
       "common.searchStudents": "ابحث عن الطلاب...",
       "common.notifications": "الإشعارات",
       "common.rating": "التقييم",
