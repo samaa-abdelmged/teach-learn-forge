@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 import { Header } from '@/components/Header';
 import { DashboardSidebar } from '@/components/DashboardSidebar';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -11,6 +12,7 @@ import { Progress } from '@/components/ui/progress';
 const StudentDashboard = () => {
   const { t } = useTranslation();
   const { userName } = useUser();
+  const navigate = useNavigate();
 
   const topInstructors = [
     {
@@ -89,11 +91,15 @@ const StudentDashboard = () => {
                             <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                             <span className="text-sm font-medium">{instructor.rating}/5</span>
                           </div>
-                        </div>
                       </div>
-                      <Button className="w-full mt-4" variant="outline">
-                        {t('student.viewProfile')}
-                      </Button>
+                    </div>
+                    <Button 
+                      className="w-full mt-4" 
+                      variant="outline"
+                      onClick={() => navigate('/instructor-profile')}
+                    >
+                      {t('student.viewProfile')}
+                    </Button>
                     </CardContent>
                   </Card>
                 ))}
@@ -147,7 +153,7 @@ const StudentDashboard = () => {
                         {section.courses} {t('student.courses')}
                       </p>
                       <Button variant="outline" className="w-full">
-                        {t('student.viewCourses')}
+                        {t('student.enrollNow')}
                       </Button>
                     </CardContent>
                   </Card>
