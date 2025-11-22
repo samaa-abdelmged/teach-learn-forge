@@ -96,7 +96,7 @@ const StudentDashboard = () => {
                     <Button 
                       className="w-full mt-4" 
                       variant="outline"
-                      onClick={() => navigate('/instructor-profile')}
+                      onClick={() => navigate(`/instructor/profile/${instructor.id}`)}
                     >
                       {t('student.viewProfile')}
                     </Button>
