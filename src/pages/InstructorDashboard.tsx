@@ -57,51 +57,6 @@ const InstructorDashboard = () => {
             </p>
           </div>
 
-          {/* Stats Cards */}
-          <div className="grid md:grid-cols-3 gap-6 mb-8 animate-scale-in">
-            <Card className="hover-lift">
-              <CardContent className="p-6">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-sm text-muted-foreground">Total Students</p>
-                    <p className="text-3xl font-bold mt-2">1,234</p>
-                  </div>
-                  <div className="p-3 bg-primary/10 rounded-full">
-                    <TrendingUp className="h-6 w-6 text-primary" />
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="hover-lift">
-              <CardContent className="p-6">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-sm text-muted-foreground">Active Courses</p>
-                    <p className="text-3xl font-bold mt-2">8</p>
-                  </div>
-                  <div className="p-3 bg-primary/10 rounded-full">
-                    <FileText className="h-6 w-6 text-primary" />
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="hover-lift">
-              <CardContent className="p-6">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-sm text-muted-foreground">Avg. Rating</p>
-                    <p className="text-3xl font-bold mt-2">4.8/5</p>
-                  </div>
-                  <div className="p-3 bg-primary/10 rounded-full">
-                    <span className="text-2xl">⭐</span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
           {/* Posts Section */}
           <section className="animate-scale-in" style={{ animationDelay: '0.1s' }}>
             <div className="flex items-center justify-between mb-6">

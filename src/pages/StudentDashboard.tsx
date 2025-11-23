@@ -140,27 +140,6 @@ const StudentDashboard = () => {
               </Card>
             </section>
 
-            {/* Explore Sections */}
-            <section className="animate-scale-in" style={{ animationDelay: '0.2s' }}>
-              <h2 className="text-2xl font-bold mb-4">{t('student.exploreSections')}</h2>
-              <div className="grid md:grid-cols-3 gap-6">
-                {sections.map((section) => (
-                  <Card key={section.id} className="hover-lift">
-                    <CardContent className="p-6 text-center">
-                      <div className="text-4xl mb-3">{section.icon}</div>
-                      <h3 className="font-semibold mb-2">{section.name}</h3>
-                      <p className="text-sm text-muted-foreground mb-4">
-                        {section.courses} {t('student.courses')}
-                      </p>
-                      <Button variant="outline" className="w-full">
-                        {t('student.enrollNow')}
-                      </Button>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </section>
-
             {/* Recent Posts */}
             <section className="animate-scale-in" style={{ animationDelay: '0.3s' }}>
               <h2 className="text-2xl font-bold mb-4">{t('student.recentPosts')}</h2>
