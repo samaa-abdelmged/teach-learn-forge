@@ -32,10 +32,14 @@ export const Header = ({ showSearch = false }: HeaderProps) => {
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-2">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-primary to-diamond rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">L&T</span>
+            <div className="w-10 h-10 bg-gradient-to-br from-primary via-primary/90 to-diamond rounded-xl flex items-center justify-center shadow-lg ring-2 ring-primary/20">
+              <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="white" fillOpacity="0.9"/>
+                <path d="M2 17L12 22L22 17" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M2 12L12 17L22 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
             </div>
-            <span className="font-bold text-xl bg-gradient-to-r from-primary to-diamond bg-clip-text text-transparent">
+            <span className="font-bold text-lg bg-gradient-to-r from-primary to-diamond bg-clip-text text-transparent">
               Learn & Teach
             </span>
           </div>
