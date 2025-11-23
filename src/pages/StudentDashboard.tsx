@@ -31,10 +31,10 @@ const StudentDashboard = () => {
     }
   ];
 
-  const sections = [
-    { id: 1, name: 'Artificial Intelligence', courses: 25, icon: '🤖' },
-    { id: 2, name: 'Data Science', courses: 32, icon: '📊' },
-    { id: 3, name: 'Web Development', courses: 45, icon: '💻' },
+  const studentCategories = [
+    { id: 1, name: 'Programming', icon: '💻' },
+    { id: 2, name: 'Design', icon: '🎨' },
+    { id: 3, name: 'AI & Machine Learning', icon: '🤖' },
   ];
 
   const recentPosts = [
@@ -71,39 +71,24 @@ const StudentDashboard = () => {
           </div>
 
           <div className="grid gap-8">
-            {/* Top Rated Instructors */}
-            <section className="animate-scale-in">
-              <h2 className="text-2xl font-bold mb-4">{t('student.topInstructors')}</h2>
-              <div className="grid md:grid-cols-2 gap-6">
-                {topInstructors.map((instructor) => (
-                  <Card key={instructor.id} className="hover-lift">
-                    <CardContent className="p-6">
-                      <div className="flex items-center gap-4">
-                        <img
-                          src={instructor.image}
-                          alt={instructor.name}
-                          className="w-16 h-16 rounded-full ring-2 ring-primary/20"
-                        />
-                        <div className="flex-1">
-                          <h3 className="font-semibold text-lg">{instructor.name}</h3>
-                          <p className="text-sm text-muted-foreground">{instructor.specialty}</p>
-                          <div className="flex items-center gap-1 mt-2">
-                            <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                            <span className="text-sm font-medium">{instructor.rating}/5</span>
-                          </div>
-                      </div>
-                    </div>
-                    <Button 
-                      className="w-full mt-4" 
-                      variant="outline"
-                      onClick={() => navigate(`/instructor/profile/${instructor.id}`)}
-                    >
-                      {t('student.viewProfile')}
-                    </Button>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
+            {/* Student Categories */}
+            <section className="animate-fade-in">
+              <h2 className="text-2xl font-bold mb-4">My Categories</h2>
+              <Card className="hover-lift">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3 flex-wrap">
+                    {studentCategories.map((category) => (
+                      <Badge 
+                        key={category.id} 
+                        className="text-base py-2 px-4 bg-gradient-to-r from-primary/10 to-diamond/10 hover:from-primary/20 hover:to-diamond/20 border-primary/20"
+                      >
+                        <span className="mr-2">{category.icon}</span>
+                        {category.name}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
             </section>
 
             {/* Badge Progress */}
@@ -140,9 +125,44 @@ const StudentDashboard = () => {
               </Card>
             </section>
 
-            {/* Recent Posts */}
+            {/* Top Rated Instructors */}
+            <section className="animate-scale-in" style={{ animationDelay: '0.2s' }}>
+              <h2 className="text-2xl font-bold mb-4">{t('student.topInstructors')}</h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                {topInstructors.map((instructor) => (
+                  <Card key={instructor.id} className="hover-lift">
+                    <CardContent className="p-6">
+                      <div className="flex items-center gap-4">
+                        <img
+                          src={instructor.image}
+                          alt={instructor.name}
+                          className="w-16 h-16 rounded-full ring-2 ring-primary/20"
+                        />
+                        <div className="flex-1">
+                          <h3 className="font-semibold text-lg">{instructor.name}</h3>
+                          <p className="text-sm text-muted-foreground">{instructor.specialty}</p>
+                          <div className="flex items-center gap-1 mt-2">
+                            <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                            <span className="text-sm font-medium">{instructor.rating}/5</span>
+                          </div>
+                      </div>
+                    </div>
+                    <Button 
+                      className="w-full mt-4" 
+                      variant="outline"
+                      onClick={() => navigate(`/instructor/profile/${instructor.id}`)}
+                    >
+                      {t('student.viewProfile')}
+                    </Button>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </section>
+
+            {/* Your Posts */}
             <section className="animate-scale-in" style={{ animationDelay: '0.3s' }}>
-              <h2 className="text-2xl font-bold mb-4">{t('student.recentPosts')}</h2>
+              <h2 className="text-2xl font-bold mb-4">You Posted</h2>
               <div className="space-y-4">
                 {recentPosts.map((post) => (
                   <Card key={post.id} className="hover-lift">
